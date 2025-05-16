@@ -2,6 +2,7 @@
 
 install dulu beberapa bagian bagi pengguna termux sebelum pakai toolsnya, salin ini lalu jalankan di termux
 ```
+pkg install git
 pkg install python
 pkg install xdg-utils
 pip install flask
