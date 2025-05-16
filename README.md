@@ -7,7 +7,7 @@ pkg install xdg-utils
 pip install flask
 ```
 
-setelah install melalu command diatas salin ini dan jalankan di termux 
+setelah install melalu command diatas, salin ini dan jalankan di termux 
 ```
 git clone https://github.com/bocil-termux/repo.git
 cd repo
