@@ -222,6 +222,7 @@ class DependencyInstaller:
             print("\033[1;33mTry running: pip install Pillow InquirerPy python-dotenv\033[0m")
         
         print("\nInstallation complete!")
+        print("Ketik build-apk untuk memulai Tools")
 
 if __name__ == "__main__":
     try:
