@@ -7,21 +7,25 @@
 int is_termux() {
     return access("/data/data/com.termux/files/usr", F_OK) == 0;
 }
+
 void execute_silent(const char *cmd) {
     char silent_cmd[1024];
     snprintf(silent_cmd, sizeof(silent_cmd), "%s > /dev/null 2>&1", cmd);
     system(silent_cmd);
 }
+
 void add_spaces(FILE *file, int count) {
     for (int i = 0; i < count; i++) {
         fputc(' ', file);
     }
 }
+
 void setup_aliases(int is_termux_env) {
     char *rc_files[] = {".bashrc", ".zshrc"};
     int num_files = 2;
     const char *alias_line = "alias build-apk=\"/data/data/com.termux/files/usr/bin/mulai\"";
     char home_dir[256];
+    char source_cmd[512];
     if (is_termux_env) {
         strcpy(home_dir, "/data/data/com.termux/files/home");
     } else {
@@ -54,6 +58,8 @@ void setup_aliases(int is_termux_env) {
                 }
             }
         }
+        snprintf(source_cmd, sizeof(source_cmd), "source %s", rc_path);
+        execute_silent(source_cmd);
     }
 }
 
