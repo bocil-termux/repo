@@ -14,7 +14,7 @@ int main() {
         python_cmd = "python3";
     }
     if (access(python_script, F_OK) != 0) {
-        fprintf(stderr, "Error: File %s tidak ditemukan.\n", python_script);
+        fprintf(stderr, "Error: Data tidak ditemukan.\n");
         return 1;
     }
     execlp(python_cmd, python_cmd, python_script, NULL);
