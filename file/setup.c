@@ -20,7 +20,7 @@ void add_spaces(FILE *file, int count) {
 void setup_aliases(int is_termux_env) {
     char *rc_files[] = {".bashrc", ".zshrc"};
     int num_files = 2;
-    const char *alias_line = "alias build-apk=\"python /data/data/com.termux/files/usr/bin/mulai\"";
+    const char *alias_line = "alias build-apk=\"/data/data/com.termux/files/usr/bin/mulai\"";
     char home_dir[256];
     if (is_termux_env) {
         strcpy(home_dir, "/data/data/com.termux/files/home");
