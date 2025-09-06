@@ -222,7 +222,9 @@ class DependencyInstaller:
             print("\033[1;33mTry running: pip install Pillow InquirerPy python-dotenv\033[0m")
         
         print("\nInstallation complete!")
-        print("Ketik build-apk untuk memulai Tools")
+        if self.is_linux or self.is_termux:
+            self.run_command("source ~/.bashrc && source ~/.zshrc 2>/dev/null || true")
+            print("Ketik build-apk untuk memulai Tools")
 
 if __name__ == "__main__":
     try:
